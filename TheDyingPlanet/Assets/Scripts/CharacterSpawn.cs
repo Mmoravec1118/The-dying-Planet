@@ -15,8 +15,7 @@ public class CharacterSpawn : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("CharacterChoice") == 1)
         {
-            Vector3 rotation = new Vector3(0, 0, 90);
-            GameObject.Instantiate(playerShips[1], transform.position, Quaternion.Euler(rotation));
+            GameObject.Instantiate(playerShips[1], transform.position, transform.rotation);
         }
 	}
 }
