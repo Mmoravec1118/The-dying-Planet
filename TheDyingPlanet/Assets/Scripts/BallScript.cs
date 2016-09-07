@@ -11,8 +11,9 @@ public class BallScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+	  
 	}
 
     void OnCollisionEnter2D(Collision2D coll)

@@ -8,6 +8,7 @@ public class SpaceshipMovement : MonoBehaviour
     float horizontalVelocity;
     Vector2 ballVelocity = new Vector2(0, 100);
     Vector2 tempVelocity;
+    bool canSpawn = true;
     	
 	// Update is called once per frame
 	void Update ()
@@ -36,9 +37,17 @@ public class SpaceshipMovement : MonoBehaviour
 
     void SpawnBall ()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && canSpawn)
         {
             Instantiate(ball, transform.position, transform.rotation);
+            canSpawn = false;
+        }
+
+        if (ball.transform.position.y < -5.5)
+        {
+            Destroy(ball);
+            canSpawn = true;
+            Debug.Log("Pwnt");
         }
     }
 }
