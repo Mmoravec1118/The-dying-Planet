@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Main Menu.unity
-=======
-<<<<<<< HEAD
 - path: Assets/Scenes/Level 1.unity
-=======
-- path: Assets/Scenes/Scene1.unity
->>>>>>> master
->>>>>>> origin/master
   isLoaded: 1
   isActive: 1

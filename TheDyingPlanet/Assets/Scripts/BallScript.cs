@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class BallScript : MonoBehaviour {
-
-<<<<<<< HEAD
     //public Rigidbody2D rb;
     void OnCollisionEnter2D(Collision2D coll)
     {
@@ -18,8 +16,6 @@ public class BallScript : MonoBehaviour {
         }
     }
 
-}
-=======
 	// Use this for initialization
 	void Start ()
     {
@@ -33,13 +29,12 @@ public class BallScript : MonoBehaviour {
 	  
 	}
 
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        // if the ball collides with a block, apply a downward velocity
-        if (coll.gameObject.tag == "Block")
-        {
-            coll.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -100));
-        }
-    }
+    //void OnCollisionEnter2D(Collision2D coll)
+    //{
+    //    // if the ball collides with a block, apply a downward velocity
+    //    if (coll.gameObject.tag == "Block")
+    //    {
+    //        coll.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -100));
+    //    }
+    //}
 }
->>>>>>> master
