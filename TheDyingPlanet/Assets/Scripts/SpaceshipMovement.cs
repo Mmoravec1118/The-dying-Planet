@@ -4,7 +4,9 @@ using System.Collections;
 public class SpaceshipMovement : MonoBehaviour
 {
     public float shipSpeed;
+    public GameObject ball;
     float horizontalVelocity;
+    Vector2 ballVelocity = new Vector2(0, 100);
     Vector2 tempVelocity;
     	
 	// Update is called once per frame
@@ -19,6 +21,24 @@ public class SpaceshipMovement : MonoBehaviour
         tempVelocity *= shipSpeed;
 
         // apply the velocity to the ships rigid body
-        GetComponent<Rigidbody2D>().velocity = tempVelocity;	
+        GetComponent<Rigidbody2D>().velocity = tempVelocity;
+
+        SpawnBall();
 	}
+
+    void OnCollisionEnter2D (Collision2D coll)
+    {
+        if (ball.gameObject.tag == "Ball")
+        {
+            ball.GetComponent<Rigidbody2D>().AddForce(ballVelocity);
+        }
+    }
+
+    void SpawnBall ()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            Instantiate(ball, transform.position, transform.rotation);
+        }
+    }
 }

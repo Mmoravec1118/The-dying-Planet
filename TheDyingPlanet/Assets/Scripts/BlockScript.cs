@@ -9,7 +9,7 @@ public class BlockScript : MonoBehaviour
         // if a ball collides with a block, destroy the block
         if (coll.gameObject.tag == "Ball")
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 	
