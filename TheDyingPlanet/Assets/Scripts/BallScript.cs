@@ -16,8 +16,8 @@ public class BallScript : MonoBehaviour {
         }
     }
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         // start the ball in an upward direction
         GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 100));
