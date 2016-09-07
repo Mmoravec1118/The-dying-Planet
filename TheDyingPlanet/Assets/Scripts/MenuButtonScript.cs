@@ -9,7 +9,7 @@ public class MenuButtonScript : MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void QuitGame()
