@@ -15,6 +15,13 @@ public class SpaceshipMovement : MonoBehaviour
     {
         // store the ships horizontal input axis
         horizontalVelocity = Input.GetAxisRaw("Horizontal");
+        
+        // prevents ship from going out of bounds
+        if (horizontalVelocity > 0f && gameObject.GetComponent<Transform>().position.x > 5.2f ||
+            horizontalVelocity < 0f && gameObject.GetComponent<Transform>().position.x < -5.2f)
+        {
+            horizontalVelocity = 0f;
+        }
 
         // calculate the velocity of the ship based on the horizontal input 
         tempVelocity = new Vector2(horizontalVelocity * shipSpeed, 0);
@@ -23,8 +30,11 @@ public class SpaceshipMovement : MonoBehaviour
 
         // apply the velocity to the ships rigid body
         GetComponent<Rigidbody2D>().velocity = tempVelocity;
+<<<<<<< HEAD
+=======
 
         SpawnBall();
+>>>>>>> master
 	}
 
     void OnCollisionEnter2D (Collision2D coll)
