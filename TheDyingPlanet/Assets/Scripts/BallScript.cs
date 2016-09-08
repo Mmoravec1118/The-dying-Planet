@@ -6,24 +6,27 @@ public class BallScript : MonoBehaviour
     float speed = 5f;
     Vector2 initialVelocity;
     Vector2 velocity;
-    bool canSpawn = false;
-    LevelControllerScript levelControlScript;
+    bool canSpawn = true;
 
     // Use this for initialization
     void Start ()
     {
         // start the ball in an upward direction
-        //GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 100));
-
-        levelControlScript = GetComponent<LevelControllerScript>();
         initialVelocity = new Vector2(Random.Range(-5f, 5f), speed);
-        GetComponent<Rigidbody2D>().velocity = initialVelocity;
+        //GetComponent<Rigidbody2D>().velocity = initialVelocity;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-
+        if (Input.GetKeyDown("space") && canSpawn)
+        {
+            LevelControllerScript.gameManager.LoseBall();
+            transform.parent = null;
+            canSpawn = false;
+            GetComponent<Rigidbody2D>().isKinematic = false;
+            GetComponent<Rigidbody2D>().velocity = initialVelocity;
+        }
 	}
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -40,6 +43,7 @@ public class BallScript : MonoBehaviour
 
         if (coll.gameObject.tag == "BottomBorder")
         {
+            LevelControllerScript.gameManager.LoseLife();
             Destroy(this.gameObject);
         }
     }
