@@ -6,7 +6,8 @@ public class BallScript : MonoBehaviour
     float speed = 5f;
     Vector2 initialVelocity;
     Vector2 velocity;
-    bool canSpawn = true;
+    bool canSpawn = false;
+    LevelControllerScript levelControlScript;
 
     // Use this for initialization
     void Start ()
@@ -14,6 +15,7 @@ public class BallScript : MonoBehaviour
         // start the ball in an upward direction
         //GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 100));
 
+        levelControlScript = GetComponent<LevelControllerScript>();
         initialVelocity = new Vector2(Random.Range(-5f, 5f), speed);
         GetComponent<Rigidbody2D>().velocity = initialVelocity;
 	}
@@ -21,12 +23,7 @@ public class BallScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-	  if (Input.GetKeyDown("space") && canSpawn)
-        {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-5f, 5f), speed));
-            canSpawn = false;
-            Debug.Log("Works");
-        }
+
 	}
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -41,27 +38,9 @@ public class BallScript : MonoBehaviour
         //    //Destroy(gameObject);
         //}
 
-        if (coll.gameObject.tag == "TopBorder")
+        if (coll.gameObject.tag == "BottomBorder")
         {
-            velocity = GetComponent<Rigidbody2D>().velocity;
-            velocity.y *= -1;
-            GetComponent<Rigidbody2D>().velocity = velocity;
-        }
-
-        if (coll.gameObject.tag == "SideBorder")
-        {
-            velocity = GetComponent<Rigidbody2D>().velocity;
-            velocity.x *= -1;
-            GetComponent<Rigidbody2D>().velocity = velocity;
+            Destroy(this.gameObject);
         }
     }
-
-    //void OnCollisionEnter2D(Collision2D coll)
-    //{
-    //    // if the ball collides with a block, apply a downward velocity
-    //    if (coll.gameObject.tag == "Block")
-    //    {
-    //        coll.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -100));
-    //    }
-    //}
 }
