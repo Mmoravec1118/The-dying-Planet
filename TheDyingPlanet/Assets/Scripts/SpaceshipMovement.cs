@@ -31,8 +31,6 @@ public class SpaceshipMovement : MonoBehaviour
         // apply the velocity to the ships rigid body
         GetComponent<Rigidbody2D>().velocity = tempVelocity;
 
-        SpawnBall();
-
 	}
 
     void OnCollisionEnter2D (Collision2D coll)
@@ -40,22 +38,6 @@ public class SpaceshipMovement : MonoBehaviour
         if (ball.gameObject.tag == "Ball")
         {
             ball.GetComponent<Rigidbody2D>().AddForce(ballVelocity);
-        }
-    }
-
-    void SpawnBall ()
-    {
-        if (Input.GetKeyDown("space") && canSpawn)
-        {
-            Instantiate(ball, transform.position, transform.rotation);
-            canSpawn = false;
-        }
-
-        if (ball.transform.position.y < -5.5)
-        {
-            Destroy(ball);
-            canSpawn = true;
-            Debug.Log("Pwnt");
         }
     }
 }

@@ -64,11 +64,11 @@ public class LevelControllerScript : MonoBehaviour {
         // go to death scene when lives or balls reach 0
         if (lives <= 0 || balls <= 0)
         {
-            SceneManager.LoadScene("Level 2");
+            //SceneManager.LoadScene("Level 2");
         
 
             // placeholding for text that follows winning
-            SceneManager.LoadScene("Win Scene");
+            SceneManager.LoadScene("Death Scene");
 
         }
 	}

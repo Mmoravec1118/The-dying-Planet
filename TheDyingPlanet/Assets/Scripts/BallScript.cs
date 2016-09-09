@@ -44,7 +44,7 @@ public class BallScript : MonoBehaviour
                 //rb = this.gameObject.GetComponent<Rigidbody2D>();
                 //rb.velocity.Set(rb.velocity.x, 0);
                 //gameObject.GetComponent<Rigidbody2D>().velocity.Set(this.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0f);
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, 0f);
+                //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, 0f);
                 //Destroy(gameObject);
             }
 
