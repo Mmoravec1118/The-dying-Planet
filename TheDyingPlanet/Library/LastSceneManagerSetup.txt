@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Level 3.unity
+=======
+- path: Assets/Scenes/Home Planet.unity
+>>>>>>> Dougs-edits-9-6-16
   isLoaded: 1
   isActive: 1

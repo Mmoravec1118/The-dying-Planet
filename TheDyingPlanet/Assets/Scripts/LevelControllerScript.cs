@@ -44,8 +44,9 @@ public class LevelControllerScript : MonoBehaviour {
         // initiates next level if all blocks are destroyed
         if (blockCount <= 0)
         {
-            if (SceneManager.GetActiveScene().name == "Level 1")
+            /*if (SceneManager.GetActiveScene().name == "Level 1")
             {
+<<<<<<< HEAD
                 PlayerPrefs.SetInt("Level1 Complete", 1);
                 SceneManager.LoadScene("DecisionScene");
             }
@@ -65,6 +66,13 @@ public class LevelControllerScript : MonoBehaviour {
         if (lives <= 0 || balls <= 0)
         {
 
+=======
+                SceneManager.LoadScene("Level 2");
+            } */
+
+            // placeholding for text that follows winning
+            SceneManager.LoadScene("Win Scene");
+>>>>>>> Dougs-edits-9-6-16
         }
 	}
 

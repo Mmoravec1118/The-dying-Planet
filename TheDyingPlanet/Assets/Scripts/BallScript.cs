@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class BallScript : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class BallScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+<<<<<<< HEAD
         if (Input.GetKeyDown("space") && canSpawn)
         {
             LevelControllerScript.gameManager.LoseBall();
@@ -26,6 +28,11 @@ public class BallScript : MonoBehaviour
             canSpawn = false;
             GetComponent<Rigidbody2D>().isKinematic = false;
             GetComponent<Rigidbody2D>().velocity = initialVelocity;
+=======
+	    if (gameObject.GetComponent<Transform>().position.y <= -5.5)
+        {
+            SceneManager.LoadScene("Death Scene");
+>>>>>>> Dougs-edits-9-6-16
         }
 	}
 
