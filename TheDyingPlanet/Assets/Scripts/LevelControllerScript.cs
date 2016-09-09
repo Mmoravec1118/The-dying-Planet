@@ -22,10 +22,13 @@ public class LevelControllerScript : MonoBehaviour {
         // initiates next level if all blocks are destroyed
         if (blockCount <= 0)
         {
-            if (SceneManager.GetActiveScene().name == "Level 1")
+            /*if (SceneManager.GetActiveScene().name == "Level 1")
             {
                 SceneManager.LoadScene("Level 2");
-            }
+            } */
+
+            // placeholding for text that follows winning
+            SceneManager.LoadScene("Win Scene");
         }
 	}
 }

@@ -30,11 +30,11 @@ public class SpaceshipMovement : MonoBehaviour
 
         // apply the velocity to the ships rigid body
         GetComponent<Rigidbody2D>().velocity = tempVelocity;
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 
         SpawnBall();
->>>>>>> master
+//>>>>>>> master
 	}
 
     void OnCollisionEnter2D (Collision2D coll)
