@@ -26,6 +26,11 @@ public class MenuButtonScript : MonoBehaviour
         SceneManager.LoadScene("Level 3");
     }
 
+    public void HomePlanet()
+    {
+        SceneManager.LoadScene("Win Scene");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

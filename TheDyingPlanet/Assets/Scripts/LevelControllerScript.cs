@@ -31,7 +31,7 @@ public class LevelControllerScript : MonoBehaviour {
         }
 
         SpawnPaddle();
-        livesText.text = "Lives" + lives;
+        livesText.text = "Lives: " + lives;
         ballsText.text = "Balls: " + balls;
 	}
 	

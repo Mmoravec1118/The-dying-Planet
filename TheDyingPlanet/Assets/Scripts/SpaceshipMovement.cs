@@ -8,7 +8,6 @@ public class SpaceshipMovement : MonoBehaviour
     float horizontalVelocity;
     Vector2 ballVelocity = new Vector2(0, 100);
     Vector2 tempVelocity;
-    bool canSpawn = true;
     	
 	// Update is called once per frame
 	void Update ()
