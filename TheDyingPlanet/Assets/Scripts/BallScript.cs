@@ -20,7 +20,6 @@ public class BallScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-<<<<<<< HEAD
         if (Input.GetKeyDown("space") && canSpawn)
         {
             LevelControllerScript.gameManager.LoseBall();
@@ -28,27 +27,28 @@ public class BallScript : MonoBehaviour
             canSpawn = false;
             GetComponent<Rigidbody2D>().isKinematic = false;
             GetComponent<Rigidbody2D>().velocity = initialVelocity;
-=======
-	    if (gameObject.GetComponent<Transform>().position.y <= -5.5)
-        {
-            SceneManager.LoadScene("Death Scene");
->>>>>>> Dougs-edits-9-6-16
+
+            if (gameObject.GetComponent<Transform>().position.y <= -5.5)
+            {
+                SceneManager.LoadScene("Death Scene");
+
+            }
         }
 	}
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        // If the ball collides with a block, ball should bounce
-        //if (coll.gameObject.tag == "Block")
-        //{
-        //    //rb = this.gameObject.GetComponent<Rigidbody2D>();
-        //    //rb.velocity.Set(rb.velocity.x, 0);
-        //    //gameObject.GetComponent<Rigidbody2D>().velocity.Set(this.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0f);
-        //    gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, 0f);
-        //    //Destroy(gameObject);
-        //}
+           // If the ball collides with a block, ball should bounce
+        if (coll.gameObject.tag == "Block")
+            {
+                //rb = this.gameObject.GetComponent<Rigidbody2D>();
+                //rb.velocity.Set(rb.velocity.x, 0);
+                //gameObject.GetComponent<Rigidbody2D>().velocity.Set(this.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0f);
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, 0f);
+                //Destroy(gameObject);
+            }
 
-        if (coll.gameObject.tag == "BottomBorder")
+            if (coll.gameObject.tag == "BottomBorder")
         {
             LevelControllerScript.gameManager.LoseLife();
             Destroy(this.gameObject);
